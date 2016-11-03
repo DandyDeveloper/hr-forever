@@ -1,7 +1,7 @@
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
 var mysql           = require('mysql');
-var sha3            = require('sha3');
+var sha256            = require('sha256');
 
 var dbConfiguration = require('../config/database.js')
 var connection = mysql.createConnection(dbConfiguration);
@@ -19,12 +19,12 @@ module.exports = function(passport) {
     });
 
     passport.use('local-signup', new LocalStrategy({
-        usernameField : 'email',
+        usernameField : 'username',
         passwordField : 'password',
         passReqToCallback : true
       },
-      function(req, email, password, done) {
-        connection.query("select * from hr_users where email = '"+ email +"'", 
+      function(req, username, password, done) {
+        connection.query("select * from hr_users where username = '"+ username +"'", 
           function(err,user) {
             console.log(user);
             console.log("above row object");
@@ -33,14 +33,14 @@ module.exports = function(passport) {
             if (user.length) {
                 return done(null, false);
             } else {
-                var passwordHash = sha3(req.body.password)
+                var passwordHash = sha256(req.body.password)
                 var newUserMysql = new Object();
-                newUserMysql.username     = req.body.username;
+                newUserMysql.username = req.body.username;
                 newUserMysql.email    = req.body.email;
                 newUserMysql.password = passwordHash;
                 newUserMysql.group_id = req.body.group_id;
 
-                var insertQuery = "INSERT INTO hr_users (username, email, password, group_id) values ('"+ req.body.name +"','"+ passwordHash +"','"+ req.body.email +"','"+ req.body.group_id +"')";
+                var insertQuery = "INSERT INTO hr_users (username, email, password, group_id) values ('"+ req.body.username +"','"+ req.body.email +"','"+ passwordHash +"','"+ req.body.group_id +"')";
                 console.log(insertQuery);
 
                 connection.query(insertQuery,function(err,user){
@@ -53,13 +53,13 @@ module.exports = function(passport) {
       }));
 
     passport.use('local-login', new LocalStrategy({
-        usernameField : 'email',
+        usernameField : 'username',
         passwordField : 'password',
         passReqToCallback : true
       },
-      function(req, email, password, done) { // callback with email and password from our form
-        var passwordHash = sha3(password);
-        connection.query("SELECT * FROM `hr_users` WHERE `email` = '" + email + "'",function(err,user) {
+      function(req, username, password, done) { // callback with email and password from our form
+        var passwordHash = sha256(password);
+        connection.query("SELECT * FROM `hr_users` WHERE `username` = '" + username + "'",function(err,user) {
 			     if (err)
               return done(err);
            if (!user.length) {

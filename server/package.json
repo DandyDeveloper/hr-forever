@@ -27,7 +27,7 @@
     "foreman": "^2.0.0",
     "mysql": "^2.6.1",
     "sql-fixtures": "^0.9.0",
-    "sha3": "*",
+    "sha256": "*",
     "cookie-parser": "^1.4.3",
     "eslint": "^3.7.1",
     "express-session": "^1.14.1",

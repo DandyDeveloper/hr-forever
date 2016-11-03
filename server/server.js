@@ -29,12 +29,14 @@ app.use(function (req, res, next) {
 
 var router = express.Router();  
     app.use('/api', router);
-    router.use(function(req,res,next) {  //For logging  
-    next(); 
-});
+    router.use(function (req, res, next) {  //For logging  
+        next(); 
+    });
 
 //Configration and Routes
 require('./config/initialConnection');
+require('./config/passport')(passport);
+require('./routes/auth.js')(app, passport);
 
 app.listen(port,'0.0.0.0', function(){
       console.log("Server is now running on " + port + ". Good luck!");
