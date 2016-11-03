@@ -1,0 +1,39 @@
+{
+  "name": "hr-forever",
+  "version": "0.0.1",
+  "description": "A HR Management application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DandyDeveloper/hr-forever.git"
+  },
+  "keywords": [
+    "hr",
+    "management",
+    "hrforever"
+  ],
+  "author": "Aaron Layfield",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DandyDeveloper/hr-forever/issues"
+  },
+  "homepage": "https://github.com/DandyDeveloper/hr-forever#readme",  
+  "dependencies": {
+    "express": "~4.12.2",
+    "foreman": "^2.0.0",
+    "mysql": "^2.6.1",
+    "sql-fixtures": "^0.9.0",
+    "sha3": "*",
+    "cookie-parser": "^1.4.3",
+    "eslint": "^3.7.1",
+    "express-session": "^1.14.1",
+    "mustache": "^2.2.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "body-parser": "*",
+    "consolidate": "*"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "hr-forever-client",
+  "version": "0.0.1",
+  "description": "Client for HR Forever",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DandyDeveloper/hr-forever.git"
+  },
+  "keywords": [
+    "hr",
+    "management",
+    "hrforever",
+    "client"
+  ],
+  "author": "Aaron Layfield",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DandyDeveloper/hr-forever/issues"
+  },
+  "homepage": "https://github.com/DandyDeveloper/hr-forever#readme"
+}

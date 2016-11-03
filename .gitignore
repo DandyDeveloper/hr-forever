@@ -1,3 +1,7 @@
+# Developer information 
+node_modules/ 
+npm-debug* 
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
