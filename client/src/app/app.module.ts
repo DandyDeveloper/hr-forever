@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
+import { TopNavComponent } from './top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LeftNavComponent
+    LeftNavComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
