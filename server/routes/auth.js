@@ -7,9 +7,17 @@ var connection      = mysql.createConnection(dbConfiguration);
 
 module.exports = function(app, passport) {
     app.post('/api/auth/login', passport.authenticate('local-login', {//User Login
-        successRedirect : domain + '/profile', 
-        failureRedirect : domain + '/login'
+        successRedirect : '/api/auth/successLogin', 
+        failureRedirect : '/api/auth/unsuccessLogin'
     }));
+
+    app.get('/api/auth/successLogin', function(req, res) { 
+        res.status(200); 
+    }); 
+    
+    app.get('/api/auth/unsuccessLogin', function(req, res) { 
+        res.status(401).send({ message: "Invalid user information" }); 
+    }); 
 
     app.post('/api/auth/signup', passport.authenticate('local-signup', {//User Signup
       successRedirect : domain + '/profile', 

@@ -60,7 +60,9 @@ module.exports = function(passport) {
       function(req, username, password, done) { // callback with email and password from our form
         var passwordHash = sha256(password);
         connection.query("SELECT * FROM `hr_users` WHERE `username` = '" + username + "'",function(err,user) {
-			     if (err)
+           console.log(err);
+           console.log(user);
+			     if (err) 
               return done(err);
            if (!user.length) {
               return done(null, false, { message: "No user found."}); 

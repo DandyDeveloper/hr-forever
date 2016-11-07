@@ -5,7 +5,8 @@ import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'login',
-  template: `...`
+  templateUrl: 'login.component.html',
+  styleUrls: ['login.component.css']
 })
 
 export class LoginComponent {

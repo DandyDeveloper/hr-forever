@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
+import { UserService } from './services/user.service';
+import { LoggedInGuard } from './services/logged-in.guard';
 import { routes } from './app.routes'; 
 
 import { AppComponent } from './app.component';
@@ -32,7 +34,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [UserService, LoggedInGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
