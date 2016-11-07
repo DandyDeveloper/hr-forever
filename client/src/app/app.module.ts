@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { ToDoComponent } from './todo-section/todo-section.component';
-import { DetailsComponent } from './details/details.component';
+import { DetailsSectionComponent } from './details-section/details-section.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { DetailsComponent } from './details/details.component';
     LeftNavComponent,
     TopNavComponent,
     ToDoComponent,
-    DetailsComponent
+    DetailsSectionComponent
   ],
   imports: [
     BrowserModule,
