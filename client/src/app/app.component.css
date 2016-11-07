@@ -242,271 +242,10 @@ a {
 
 /*MAIN CONTENT CSS*/
 
-.toDo {
-  float: left;
-}
-
-.toDo,
-.yourTeam,
 .details {
   width: 94%;
   display: table;
   margin-left: 78px;
-}
-
-.toDo .reviews {
-  border-right: 1px solid #d7e3f0;
-}
-
-.toDo .reviews,
-.toDo .goals {
-  width: 50%;
-  display: table-cell;
-  padding: 25px 30px 15px 25px;
-  box-sizing: border-box;
-  border-bottom: 1px solid #ccdcec;
-}
-
-.toDo .reviews h1,
-.toDo .goals h1 {
-  float: left;
-  font-size: 20px;
-  color: #58789a;
-  margin-bottom: 20px;
-  margin-right: 10px;
-}
-
-.toDo .reviews form,
-.toDo .goals form {
-  clear: both;
-}
-
-.toDo form ul {
-  position: relative;
-}
-
-.toDo .reviews form ul li,
-.toDo .goals form ul li {
-  position: relative;
-  padding: 15px 5px 15px;
-  border-bottom: 1px solid #e5eef8;
-}
-
-.toDo form ul li:last-child {
-  border: none;
-}
-
-.toDo form ul li input[type=checkbox] {
-  cursor: pointer;
-  position: relative;
-  visibility: hidden;
-}
-
-.toDo form ul li input[type=checkbox]:after {
-  background-color: white;
-  border: 1px solid #bfd2e4;
-  border-radius: 2px;
-  color: #FFF;
-  content: "";
-  display: block;
-  width: 18px;
-  height: 18px;
-  margin-top: -3px;
-  line-height: 16px;
-  position: absolute;
-  text-align: center;
-  visibility: visible;
-}
-
-.toDo form ul li input[type=checkbox]:checked:after {
-  border: 1px solid #61c6cf;
-  color: #61c6cf;
-  content: "✓";
-}
-
-.toDo form ul li input#temp {
-  color: #6381A1;
-  border: none;
-  outline: none;
-  font-size: 100%;
-  width: 50%;
-  height: 18px;
-  padding: 0;
-  margin: 0;
-  background-color: transparent;
-}
-
-.toDo form ul li button {
-  display: none;
-}
-
-.toDo form ul li.active {
-  background-color: #f6fafe;
-}
-
-.toDo form ul li.active button {
-  display: block;
-}
-
-.toDo form ul li.active:before {
-  content: "";
-  position: absolute;
-  border-left: 5px solid #61c6cf;
-  left: -5px;
-  width: 5px;
-  height: 51px;
-  margin-top: -16px;
-}
-
-.toDo form ul li .reviewDate,
-.toDo form ul li .goalAchivements {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  float: right;
-  margin-right: 0px;
-  background-color: #F6FAFE;
-  color: #95AAC0;
-  font-size: 12px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 12px;
-  padding: 5px;
-  border-radius: 2px;
-}
-
-.toDo form ul li .reviewDate {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.toDo form ul li.active .reviewDate {
-  margin-right: 60px;
-}
-
-.toDo form ul li span {
-  float: right;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.toDo form ul li .alert .reviewDate {
-  background-color: #E07182 !important;
-  color: #FFF !important;
-  width: 110px;
-}
-
-.toDo form ul li .alert:before {
-  content: "!";
-  position: absolute;
-  width: 15px;
-  height: 19px;
-  background-color: #CE7180;
-  color: #FFF;
-  text-align: center;
-  padding: 5px 2px 0px 2px;
-  left: -19px;
-  margin-top: 12px;
-  border-radius: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.toDo form ul li .warn-score .goalAchivements {
-  background-color: #ed9e57 !important;
-  color: #FFF !important;
-}
-
-.toDo form ul li .warn-approval .goalAchivements {
-  background-color: #f7bf47 !important;
-  color: #FFF !important;
-}
-
-.toDo form ul li .ui-datepicker-trigger {
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  background: #60C6CF url(http://i58.tinypic.com/4gszrr.png) no-repeat center;
-}
-
-.toDo form ul li .ui-datepicker-trigger:hover {
-  cursor: pointer;
-}
-
-.toDo form ul li .ui-datepicker-trigger:before {
-  content: "";
-  left: -10px;
-  top: 21px;
-  position: absolute;
-  border: 5px solid rgba(0, 0, 0, 0);
-  border-right-color: #61C6CF;
-}
-
-.toDo form ul li label {
-  margin-left: 15px;
-}
-
-.toDo form ul li label:hover {
-  cursor: pointer;
-}
-
-.toDo .add {
-  position: relative;
-  background-color: #c0d6ec;
-  color: #FFF;
-  padding: 0px 6px;
-  font-weight: bold;
-  border-radius: 2px;
-  font-size: 22px;
-  -webkit-transition: all ease 0.3s;
-  -moz-transition: all ease 0.3s;
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-}
-
-.toDo .add:hover {
-  background-color: #80abd2;
-}
-
-.toDo .add.selected {
-  position: relative;
-  background-color: #61c6cf;
-  color: #FFF;
-  padding: 0px 6px;
-  font-weight: bold;
-  border-radius: 2px;
-  font-size: 22px;
-  -webkit-transition: all ease 0.3s;
-  -moz-transition: all ease 0.3s;
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-}
-
-.toDo .add.selected:after {
-  content: "";
-  position: absolute;
-  border: 5px solid rgba(0, 0, 0, 0);
-  border-top-color: #61c6cf;
-  left: 8px;
-  top: 25px;
-  -webkit-transition: all ease 0.3s;
-  -moz-transition: all ease 0.3s;
-  -o-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-}
-
-.yourTeam {
-  background-color: #dfebf6;
-  text-align: center;
-  border-top: 1px solid #ccdcec;
-  border-bottom: 1px solid #bdcfe1;
-  padding: 14px 0;
-  float: left;
 }
 
 .details {
@@ -551,7 +290,7 @@ a {
   width: 100%;
 }
 
-.details .details-header .icon-setReview,
+.details .details-header .icon-setLeave,
 .details .details-header .icon-setGoal,
 .details .details-header .icon-setNote {
   position: relative;
@@ -562,7 +301,7 @@ a {
   float: right;
 }
 
-.details .details-header .icon-setReview .tooltip,
+.details .details-header .icon-setLeave .tooltip,
 .details .details-header .icon-setGoal .tooltip,
 .details .details-header .icon-setNote .tooltip {
   pointer-events: none;
@@ -577,7 +316,7 @@ a {
   transition: all ease 0.3s;
 }
 
-.details .details-header .icon-setReview .tooltip span,
+.details .details-header .icon-setLeave .tooltip span,
 .details .details-header .icon-setGoal .tooltip span,
 .details .details-header .icon-setNote .tooltip span {
   display: block;
@@ -594,7 +333,7 @@ a {
   line-height: 2;
 }
 
-.details .details-header .icon-setReview .tooltip span:after,
+.details .details-header .icon-setLeave .tooltip span:after,
 .details .details-header .icon-setGoal .tooltip span:after,
 .details .details-header .icon-setNote .tooltip span:after {
   top: -16px;
@@ -609,26 +348,26 @@ a {
   margin-left: -8px;
 }
 
-.details .details-header .icon-setReview:hover,
+.details .details-header .icon-setLeave:hover,
 .details .details-header .icon-setGoal:hover,
 .details .details-header .icon-setNote:hover {
   cursor: pointer;
   background-color: #FFF;
 }
 
-.details .details-header .icon-setReview:hover span,
+.details .details-header .icon-setLeave:hover span,
 .details .details-header .icon-setGoal:hover span,
 .details .details-header .icon-setNote:hover span {
   opacity: 1;
   transition: all ease 0.3s;
 }
 
-.details .reviewFeedback > ul li:first-child,
+.details .leaveFeedback > ul li:first-child,
 .details .goalProgress > ul li:first-child {
   border-top: 1px solid #d7e3f0;
 }
 
-.details .reviewFeedback > ul li,
+.details .leaveFeedback > ul li,
 .details .goalProgress > ul li {
   display: table;
   width: 100%;
@@ -644,7 +383,7 @@ a {
   background-size: 36px;
 }
 
-.details .reviewFeedback .score,
+.details .leaveFeedback .score,
 .details .goalProgress .icon-user1,
 .details .goalProgress .icon-user2,
 .details .goalProgress .icon-user3,
@@ -669,7 +408,7 @@ a {
   vertical-align: middle;
 }
 
-.details .reviewFeedback .score .circle {
+.details .leaveFeedback .score .circle {
   position: absolute;
   right: -8px;
   top: 50%;
@@ -680,23 +419,23 @@ a {
   background-color: #FFF;
 }
 
-.details .reviewFeedback .score .circle.purple {
+.details .leaveFeedback .score .circle.purple {
   border: 3px solid #A08BCD;
 }
 
-.details .reviewFeedback .score .circle.orange {
+.details .leaveFeedback .score .circle.orange {
   border: 3px solid #ec974b;
 }
 
-.details .reviewFeedback .score .circle.yellow {
+.details .leaveFeedback .score .circle.yellow {
   border: 3px solid #f7bf47;
 }
 
-.details .reviewFeedback .score p {
+.details .leaveFeedback .score p {
   font-size: 40px;
 }
 
-.details .reviewFeedback .info,
+.details .leaveFeedback .info,
 .details .goalProgress .info {
   text-align: left;
   width: 75%;
@@ -711,7 +450,7 @@ a {
   padding-left: 0;
 }
 
-.details .reviewFeedback .info .title {
+.details .leaveFeedback .info .title {
   font-weight: bold;
 }
 

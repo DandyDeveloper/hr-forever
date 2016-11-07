@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LeftNavComponent } from './left-nav/left-nav.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { ToDoComponent } from './todo-section/todo-section.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LeftNavComponent,
-    TopNavComponent
+    TopNavComponent,
+    ToDoComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

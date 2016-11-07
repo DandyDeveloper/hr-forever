@@ -1,0 +1,389 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+/* TODO COMPONENT */ 
+.toDo {
+  float: left;
+}
+
+.toDo {
+  width: 94%;
+  display: table;
+  margin-left: 78px;
+}
+
+.toDo .leave {
+  border-right: 1px solid #d7e3f0;
+}
+
+.toDo .leave,
+.toDo .goals {
+  width: 50%;
+  display: table-cell;
+  padding: 25px 30px 15px 25px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccdcec;
+}
+
+.toDo .leave h1,
+.toDo .goals h1 {
+  float: left;
+  font-size: 20px;
+  color: #58789a;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.toDo .leave form,
+.toDo .goals form {
+  clear: both;
+}
+
+.toDo form ul {
+  position: relative;
+}
+
+.toDo .leave form ul li,
+.toDo .goals form ul li {
+  position: relative;
+  padding: 15px 5px 15px;
+  border-bottom: 1px solid #e5eef8;
+}
+
+.toDo form ul li:last-child {
+  border: none;
+}
+
+.toDo form ul li input[type=checkbox] {
+  cursor: pointer;
+  position: relative;
+  visibility: hidden;
+}
+
+.toDo form ul li input[type=checkbox]:after {
+  background-color: white;
+  border: 1px solid #bfd2e4;
+  border-radius: 2px;
+  color: #FFF;
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-top: -3px;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  visibility: visible;
+}
+
+.toDo form ul li input[type=checkbox]:checked:after {
+  border: 1px solid #61c6cf;
+  color: #61c6cf;
+  content: "✓";
+}
+
+.toDo form ul li input#temp {
+  color: #6381A1;
+  border: none;
+  outline: none;
+  font-size: 100%;
+  width: 50%;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.toDo form ul li button {
+  display: none;
+}
+
+.toDo form ul li.active {
+  background-color: #f6fafe;
+}
+
+.toDo form ul li.active button {
+  display: block;
+}
+
+.toDo form ul li.active:before {
+  content: "";
+  position: absolute;
+  border-left: 5px solid #61c6cf;
+  left: -5px;
+  width: 5px;
+  height: 51px;
+  margin-top: -16px;
+}
+
+.toDo form ul li .leaveDate,
+.toDo form ul li .goalAchivements {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  float: right;
+  margin-right: 0px;
+  background-color: #F6FAFE;
+  color: #95AAC0;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 12px;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.toDo form ul li .leaveDate {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.toDo form ul li.active .leaveDate {
+  margin-right: 60px;
+}
+
+.toDo form ul li span {
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.toDo form ul li .alert .leaveDate {
+  background-color: #E07182 !important;
+  color: #FFF !important;
+  width: 110px;
+}
+
+.toDo form ul li .alert:before {
+  content: "!";
+  position: absolute;
+  width: 15px;
+  height: 19px;
+  background-color: #CE7180;
+  color: #FFF;
+  text-align: center;
+  padding: 5px 2px 0px 2px;
+  left: -19px;
+  margin-top: 12px;
+  border-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.toDo form ul li .warn-score .goalAchivements {
+  background-color: #ed9e57 !important;
+  color: #FFF !important;
+}
+
+.toDo form ul li .warn-approval .goalAchivements {
+  background-color: #f7bf47 !important;
+  color: #FFF !important;
+}
+
+.toDo form ul li .ui-datepicker-trigger {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: #60C6CF url(http://i58.tinypic.com/4gszrr.png) no-repeat center;
+}
+
+.toDo form ul li .ui-datepicker-trigger:hover {
+  cursor: pointer;
+}
+
+.toDo form ul li .ui-datepicker-trigger:before {
+  content: "";
+  left: -10px;
+  top: 21px;
+  position: absolute;
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-right-color: #61C6CF;
+}
+
+.toDo form ul li label {
+  margin-left: 15px;
+}
+
+.toDo form ul li label:hover {
+  cursor: pointer;
+}
+
+.toDo .add {
+  position: relative;
+  background-color: #c0d6ec;
+  color: #FFF;
+  padding: 0px 6px;
+  font-weight: bold;
+  border-radius: 2px;
+  font-size: 22px;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.toDo .add:hover {
+  background-color: #80abd2;
+}
+
+.toDo .add.selected {
+  position: relative;
+  background-color: #61c6cf;
+  color: #FFF;
+  padding: 0px 6px;
+  font-weight: bold;
+  border-radius: 2px;
+  font-size: 22px;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.toDo .add.selected:after {
+  content: "";
+  position: absolute;
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-top-color: #61c6cf;
+  left: 8px;
+  top: 25px;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
