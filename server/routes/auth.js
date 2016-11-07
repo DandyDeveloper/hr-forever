@@ -1,23 +1,24 @@
-let domain = 'http://localhost:5000';
-
 var mysql           = require('mysql');
-var dbConfiguration = require('../config/database.js')
+var jwt             = require('jsonwebtoken');
+var _               = require('lodash'); 
 
+
+var dbConfiguration = require('../config/database.js')
+var config          = require('../config/config');
 var connection      = mysql.createConnection(dbConfiguration);
 
-module.exports = function(app, passport) {
-    app.post('/api/auth/login', passport.authenticate('local-login', {//User Login
-        successRedirect : '/api/auth/successLogin', 
-        failureRedirect : '/api/auth/unsuccessLogin'
-    }));
+let domain = 'http://localhost:5000';
 
-    app.get('/api/auth/successLogin', function(req, res) { 
-        res.status(200); 
-    }); 
-    
-    app.get('/api/auth/unsuccessLogin', function(req, res) { 
-        res.status(401).send({ message: "Invalid user information" }); 
-    }); 
+module.exports = function(app, passport) {
+    function createToken(user) {
+      return jwt.sign(_.omit(user, 'password'), config.secret, { expiresIn: 60*5 });
+    }
+
+    app.post('/api/auth/login', passport.authenticate('local-login'), function(req, res) { 
+        res.status(201).send({
+            id_token: createToken(res.username)
+        });
+    });
 
     app.post('/api/auth/signup', passport.authenticate('local-signup', {//User Signup
       successRedirect : domain + '/profile', 

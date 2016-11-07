@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Http } from '@angular/http';
 
 import { UserService } from '../services/user.service';
 
@@ -10,14 +11,9 @@ import { UserService } from '../services/user.service';
 })
 
 export class LoginComponent {
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService) {}
 
-  onSubmit(username, password) {
-    this.userService.login(username, password).subscribe((result) => {
-      if (result) {
-        this.router.navigate(['']);
-      }
-    });
-
+  onSubmit(event, email, password) { 
+    this.userService.login(event, email, password);
   }
 }

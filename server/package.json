@@ -21,20 +21,22 @@
   "bugs": {
     "url": "https://github.com/DandyDeveloper/hr-forever/issues"
   },
-  "homepage": "https://github.com/DandyDeveloper/hr-forever#readme",  
+  "homepage": "https://github.com/DandyDeveloper/hr-forever#readme",
   "dependencies": {
-    "express": "~4.12.2",
-    "foreman": "^2.0.0",
-    "mysql": "^2.6.1",
-    "sql-fixtures": "^0.9.0",
-    "sha256": "*",
+    "body-parser": "*",
+    "consolidate": "*",
     "cookie-parser": "^1.4.3",
     "eslint": "^3.7.1",
+    "express": "~4.12.2",
     "express-session": "^1.14.1",
+    "foreman": "^2.0.0",
+    "jsonwebtoken": "^7.1.9",
+    "lodash": "^4.16.6",
     "mustache": "^2.2.1",
+    "mysql": "^2.6.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "body-parser": "*",
-    "consolidate": "*"
+    "sha256": "*",
+    "sql-fixtures": "^0.9.0"
   }
 }

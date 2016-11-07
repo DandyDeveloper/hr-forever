@@ -1,13 +1,12 @@
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
 var mysql           = require('mysql');
-var sha256            = require('sha256');
+var sha256          = require('sha256');
 
-var dbConfiguration = require('../config/database.js')
+var dbConfiguration = require('../config/database.js');
 var connection = mysql.createConnection(dbConfiguration);
 
 module.exports = function(passport) {
-
     passport.serializeUser(function(user, done) {
       done(null, user.id);
     });
@@ -19,12 +18,12 @@ module.exports = function(passport) {
     });
 
     passport.use('local-signup', new LocalStrategy({
-        usernameField : 'username',
+        usernameField : 'email',
         passwordField : 'password',
         passReqToCallback : true
       },
-      function(req, username, password, done) {
-        connection.query("select * from hr_users where username = '"+ username +"'", 
+      function(req, email, password, done) {
+        connection.query("select * from hr_users where email = '"+ email +"'", 
           function(err,user) {
             console.log(user);
             console.log("above row object");
@@ -53,15 +52,13 @@ module.exports = function(passport) {
       }));
 
     passport.use('local-login', new LocalStrategy({
-        usernameField : 'username',
+        usernameField : 'email',
         passwordField : 'password',
         passReqToCallback : true
       },
-      function(req, username, password, done) { // callback with email and password from our form
+      function(req, email, password, done) { // callback with email and password from our form
         var passwordHash = sha256(password);
-        connection.query("SELECT * FROM `hr_users` WHERE `username` = '" + username + "'",function(err,user) {
-           console.log(err);
-           console.log(user);
+        connection.query("SELECT * FROM `hr_users` WHERE `email` = '" + email + "'",function(err,user) {
 			     if (err) 
               return done(err);
            if (!user.length) {
@@ -75,8 +72,5 @@ module.exports = function(passport) {
               return done(null, user[0]);
 		     });
       })
-    );
-
-
- 
+    ); 
 };

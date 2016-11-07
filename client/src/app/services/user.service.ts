@@ -1,40 +1,44 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Router } from '@angular/router';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-const domain = 'http://localhost:8888/';
+import { contentHeaders } from '../services/headers';
+
+const domain = 'http://localhost:8888';
 
 @Injectable()
 export class UserService {
   private loggedIn = false;
 
-  constructor(private http: Http) {
-    this.loggedIn = !!localStorage.getItem('auth_token');
+  constructor(public router: Router, private http: Http) {
+    this.loggedIn = !!localStorage.getItem('id_token');
   }
 
-  login(username, password) {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+  login(event, email, password) {
+  event.preventDefault();
+  let body = JSON.stringify({ email, password });
+  this.http.post('http://localhost:8888/api/auth/login', body, { headers: contentHeaders })
+            .subscribe(
+              response => {
+                console.log(response.json().id_token); 
+                localStorage.setItem('id_token', response.json().id_token);
+                this.router.navigate(['home']);
+              },
+              error => {
+                alert(error.text());
+                console.log(error.text());
+              }
+            );
+  }
 
-    return this.http
-      .post(
-        domain + 'api/auth/login', 
-        JSON.stringify({ username, password }), 
-        { headers }
-      )
-      .map(res => res.json())
-      .map((res) => {
-        if (res.success) {
-          localStorage.setItem('auth_token', res.auth_token);
-          this.loggedIn = true;
-        }
-
-        return res.success;
-      });
+  signup(event) {
+    event.preventDefault();
+    this.router.navigate(['signup']);
   }
   
   logout() {
-    localStorage.removeItem('auth_token');
+    localStorage.removeItem('id_token');
     this.loggedIn = false;
   }
 
