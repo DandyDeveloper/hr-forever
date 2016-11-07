@@ -16,20 +16,20 @@ export class UserService {
   }
 
   login(event, email, password) {
-  event.preventDefault();
-  let body = JSON.stringify({ email, password });
-  this.http.post('http://localhost:8888/api/auth/login', body, { headers: contentHeaders })
-            .subscribe(
-              response => {
-                console.log(response.json().id_token); 
-                localStorage.setItem('id_token', response.json().id_token);
-                this.router.navigate(['home']);
-              },
-              error => {
-                alert(error.text());
-                console.log(error.text());
-              }
-            );
+    event.preventDefault();
+    let body = JSON.stringify({ email, password });
+    this.http.post('http://localhost:8888/api/auth/login', body, { headers: contentHeaders })
+              .subscribe(
+                response => {
+                  console.log(response.json().id_token); 
+                  localStorage.setItem('id_token', response.json().id_token);
+                  this.router.navigate(['home']);
+                },
+                error => {
+                  alert(error.text());
+                  console.log(error.text());
+                }
+              );
   }
 
   signup(event) {
@@ -38,8 +38,15 @@ export class UserService {
   }
   
   logout() {
-    localStorage.removeItem('id_token');
-    this.loggedIn = false;
+    this.http.get('http://localhost:8888/api/auth/logout', response => {
+      localStorage.removeItem('id_token');
+      this.loggedIn = false;
+      this.router.navigate(['login']);
+    }),
+    error => { 
+      alert(error.text()); 
+      console.log(error.texT()); 
+    };
   }
 
   isLoggedIn() {

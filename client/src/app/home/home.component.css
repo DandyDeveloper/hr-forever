@@ -1,3 +1,5 @@
+/* CSS RESET */
+
 html,
 body,
 div,
@@ -228,7 +230,6 @@ body {
 a {
   text-decoration: none;
 }
-
 
 /*STYLING*/
 

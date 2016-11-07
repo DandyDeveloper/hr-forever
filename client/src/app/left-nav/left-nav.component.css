@@ -275,3 +275,27 @@ a {
   width: 100%;
   height: 100%;
 }
+
+.icon-settings {
+  background: url(http://i62.tinypic.com/28ai7f5.png) no-repeat center;
+}
+
+.icon-home {
+  background: url(http://i62.tinypic.com/2zyy979.png) no-repeat center;
+}
+
+.icon-calendar {
+  background: url(http://i58.tinypic.com/2prs1go.png) no-repeat center;
+}
+
+.icon-circles {
+  background: url(http://i61.tinypic.com/28vta1i.png) no-repeat center;
+}
+
+.icon-doneTask {
+  background: url(http://i62.tinypic.com/hu1640.png) no-repeat center;
+}
+
+.icon-stats {
+  background: url(http://i59.tinypic.com/214nir.png) no-repeat center;
+}

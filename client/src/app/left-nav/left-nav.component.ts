@@ -12,7 +12,6 @@ export class LeftNavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

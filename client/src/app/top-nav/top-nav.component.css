@@ -1,5 +1,4 @@
-/* CSS RESET */
-
+/* CSS RESET */ 
 html,
 body,
 div,
@@ -231,10 +230,56 @@ a {
   text-decoration: none;
 }
 
+
+/* LEFT NAVIGATION */
+
+#leftNav {
+  background-color: #4b6c8b;
+  width: 78px;
+  height: 100%;
+  position: absolute;
+}
+
+#leftNav ul li {
+  text-align: center;
+  height: 70px;
+  border: 1px solid #3c5674;
+  border-top-color: #537797;
+  border-left-color: #537797;
+  transition: all ease 0.3s;
+  box-sizing: border-box;
+}
+
+#leftNav ul li.selected {
+  background-color: #3d5b77;
+  border: 1px solid #2f4c67;
+  border-left: 4px solid #07a9e1;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+#leftNav ul li:hover,
+#topNav ul li:hover {
+  background-color: #54789a;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+#leftNav ul li a,
+#topNav ul li a {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
 /* START OF HEADER */
 
 header {
-  width: 70%;
+  width: 64%;
   margin-left: 78px;
   display: table;
 }
