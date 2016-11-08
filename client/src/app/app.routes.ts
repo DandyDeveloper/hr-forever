@@ -5,8 +5,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoggedInGuard } from './services/logged-in.guard'; 
 
 export const routes = [
-  { path: '', component: LoginComponent, pathMatch: 'full' },
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [LoggedInGuard] },
-  { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard] }
+  { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard] },
+  { path: 'logout', component: LoginComponent }
 ];
